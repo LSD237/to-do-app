@@ -60,4 +60,13 @@
   border-radius: 8px;
   padding: 0 10px;
   line-height: 1;
+  transition: background-color 0.3s linear;
+}
+
+.item__button:hover {
+  background-color: #ff0000;
+}
+
+.item__button:active {
+  transform: scale(0.985);
 }

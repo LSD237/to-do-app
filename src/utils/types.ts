@@ -3,3 +3,9 @@ export type TToDoItem = {
   completed: boolean;
   id: string;
 };
+
+export enum ToDoFilters {
+  All = 'all',
+  Active = 'active',
+  Completed = 'completed',
+}

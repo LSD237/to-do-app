@@ -1,0 +1,53 @@
+.panel {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas: 'counter filters remove';
+  justify-content: space-between;
+  grid-template-columns: 90px max-content max-content;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.panel__counter {
+  grid-area: counter;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400px;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.panel__btnWrapper {
+  grid-area: filters;
+  display: flex;
+  width: fit-content;
+  gap: 0 10px;
+}
+
+.panel__removeBtn {
+  grid-area: remove;
+}
+
+.panel__btn {
+  background-color: transparent;
+  border: 1px solid darkcyan;
+  border-radius: 5px;
+  padding: 5px 15px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400px;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color .3s linear;
+}
+
+.panel__btn:hover {
+  background-color: #ffe4c4;
+}
+
+.panel__btn:active {
+  transform: scale(0.985);
+}
