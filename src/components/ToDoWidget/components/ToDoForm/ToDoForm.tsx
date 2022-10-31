@@ -3,7 +3,6 @@ import cx from 'classnames';
 import styles from './ToDoForm.module.css';
 import { IToDoFormProps } from './ToDoForm.props';
 
-
 const ToDoForm: FC<IToDoFormProps> = ({ addToDo, className, ...props }) => {
   const [inputValue, setInputValue] = useState<string>('');
 
@@ -15,7 +14,7 @@ const ToDoForm: FC<IToDoFormProps> = ({ addToDo, className, ...props }) => {
     e.preventDefault();
     addToDo(inputValue);
     setInputValue('');
-  }
+  };
 
   return (
     <form className={cx(styles.form, className)} {...props} onSubmit={formSubmitHandler}>
