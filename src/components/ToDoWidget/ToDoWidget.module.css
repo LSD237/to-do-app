@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px 0;
+}
+
+.label {
+  word-wrap: break-word;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 3.5rem;
+  line-height: 1;
+  margin: 0;
+  color: rgb(247, 155, 121);
+}
+
+@media screen and (max-width: 650px) {
+  .label {
+    font-size: 2.5rem;
+  }
+}
