@@ -41,7 +41,7 @@
   font-size: 1rem;
   line-height: 1;
   cursor: pointer;
-  transition: background-color .3s linear;
+  transition: background-color 0.3s linear;
 }
 
 .panel__btn_active {
@@ -77,11 +77,11 @@
 
 @media screen and (max-width: 450px) {
   .panel {
-  grid-template-areas: 
-  'counter counter'
-  'filters remove';
-  grid-template-columns: 1fr 1fr;
-  gap: 5px 5px;
-  padding: 5px 15px;
+    grid-template-areas:
+      'counter counter'
+      'filters remove';
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 5px;
+    padding: 5px 15px;
   }
 }
