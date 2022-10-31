@@ -1,0 +1,6 @@
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { TToDoItem } from '../../../../utils/types';
+
+export interface IToDoListProps extends DetailedHTMLProps<HTMLAttributes<HTMLUListElement>, HTMLUListElement> {
+  todos: TToDoItem[];
+}
