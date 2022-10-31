@@ -1,6 +1,6 @@
 # <a id="top" />To-do app
 
-![Картинка](./src/images/logo.png)
+![Картинка](./readmeStatic//readme-preview.png)
 
 ---
 
@@ -45,7 +45,7 @@
 
 ## <a id="references" />Ссылки
 
-<!-- Проект на [GH-Pages](https://andreikolosov.github.io/react-burger/) -->
+Проект на [GH-Pages](https://andreikolosov.github.io/to-do-app/)
 
 [Наверх](#top)
 
