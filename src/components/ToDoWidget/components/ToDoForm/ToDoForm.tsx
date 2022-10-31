@@ -2,7 +2,7 @@ import { ChangeEvent, FC, FormEvent, useState } from 'react';
 import cx from 'classnames';
 import styles from './ToDoForm.module.css';
 import { IToDoFormProps } from './ToDoForm.props';
-import { ToDoItemStates } from '../../../../utils/types';
+import { nanoid } from 'nanoid';
 
 
 const ToDoForm: FC<IToDoFormProps> = ({ setToDo ,className, ...props }) => {
@@ -18,7 +18,8 @@ const ToDoForm: FC<IToDoFormProps> = ({ setToDo ,className, ...props }) => {
       setToDo((prevState) => [
       {
         label: inputValue,
-        state: ToDoItemStates.Active,
+        completed: false,
+        id: nanoid(),
       },
       ...prevState,
     ]);
@@ -39,9 +40,9 @@ const ToDoForm: FC<IToDoFormProps> = ({ setToDo ,className, ...props }) => {
         onChange={changeHandler}
       />
     </label>
-    <button type='submit' className={styles.button} disabled={!inputValue}>
+    {inputValue && <button type='submit' className={styles.button} disabled={!inputValue}>
       &crarr;
-    </button>
+    </button>}
   </form>
 );}
 

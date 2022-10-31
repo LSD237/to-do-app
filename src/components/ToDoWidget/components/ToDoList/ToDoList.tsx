@@ -1,16 +1,13 @@
 import { FC } from 'react';
 import cx from 'classnames';
+import styles from './ToDoList.module.css';
 import { IToDoListProps } from './ToDoList.props';
+import ToDoItem from '../ToDoItem/ToDoItem';
 
-const ToDoList: FC<IToDoListProps> = ({ todos, className, ...props }) => (
-  <ul className={cx(className)} {...props}>
+const ToDoList: FC<IToDoListProps> = ({ changeHandler, removeHandler, todos, className, ...props }) => (
+  <ul className={cx(styles.list, className)} {...props}>
     {todos.map((item, index) => (
-      <li key={index}>
-        <label htmlFor={item.label.concat(index.toString())}>
-          <input type='checkbox' name={item.label} id={item.label.concat(index.toString())} />
-          {item.label}
-        </label>
-      </li>
+      <ToDoItem key={index} itemData={item} changeHandler={changeHandler} removeHandler={removeHandler} />
     ))}
   </ul>
 );
