@@ -46,7 +46,7 @@ const ToDoWidget: FC<IToDoWidgetProps> = ({ label, className, ...props }) => {
       <h2 className={styles.label}>{label}</h2>
       <ToDoForm setToDo={setTodos} />
       <ToDoList todos={todos} changeHandler={handleChangeItemState} removeHandler={handleRemoveItem} filter={filter} />
-      <ToDoControlPanel clearHandler={handleClearCompleted} filterHandler={handleSetFilter} counter={counter}/>
+      <ToDoControlPanel clearHandler={handleClearCompleted} filterHandler={handleSetFilter} counter={counter} activeFilter={filter}/>
     </div>
   );
 };

@@ -5,11 +5,11 @@ function App() {
   return (
     <div className={styles.app}>
       <header className={styles.header}>
-        <h1>Заголовок который спрятан</h1>
+        <h1 className={styles.header__hiddenTitle}>Приложение "Список дел"</h1>
       </header>
       <div className={styles.content}>
         <section aria-label='Список дел' className={styles.todoSection}>
-          <ToDoWidget label='todos' className={styles.todoWidget} />
+          <ToDoWidget label='To-Do List' className={styles.todoWidget} />
         </section>
       </div>
     </div>

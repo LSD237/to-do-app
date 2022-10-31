@@ -19,7 +19,7 @@ const ToDoItem: FC<IToDoItemProps> = ({ itemData, removeHandler, changeHandler, 
         name={itemData.label}
         id={itemData.id}
       />
-      {itemData.label}
+      <span className={styles.item__text}>{itemData.label}</span>
     </label>
     <button type='button' className={styles.item__button} onClick={() => removeHandler(itemData.id)}>
       X

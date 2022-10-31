@@ -8,17 +8,25 @@
 
 .item__inputLabel {
   display: grid;
-	align-items: center;
-	max-width: max-content;
-	cursor: pointer;
-	grid-template-columns: 20px auto;
-	gap: 0 20px;
+  grid-template-columns: 20px auto;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 20px 0 0;
+  max-width: fit-content;
+  gap: 0 20px;
   margin: 0;
-	text-align: left;
-	color: #000;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-size: 1rem;
-	line-height: 1;
+}
+
+.item__text {
+  text-align: left;
+  color: #000;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .item__inputLabel_checked {
@@ -38,19 +46,19 @@
 
 .item__input {
   width: 20px;
-	height: 20px;
-	padding: 0;
-	cursor: pointer;
-	border-color: transparent;
-	background-image: url("../../../../images/icons/checkbox.svg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	appearance: none;
+  height: 20px;
+  padding: 0;
+  cursor: pointer;
+  border-color: transparent;
+  background-image: url('../../../../images/icons/checkbox.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  appearance: none;
 }
 
 .item__input:checked {
-	background-image: url("../../../../images/icons/checkbox-checked.svg");
+  background-image: url('../../../../images/icons/checkbox-checked.svg');
 }
 
 .item__button {
@@ -69,4 +77,19 @@
 
 .item__button:active {
   transform: scale(0.985);
+}
+
+@media screen and (max-width: 650px) {
+  .item__input {
+    width: 15px;
+    height: 15px;
+  }
+
+  .item__inputLabel {
+    font-size: 0.875rem;
+  }
+
+  .item__button {
+    padding: 0 5px;
+  }
 }

@@ -44,10 +44,44 @@
   transition: background-color .3s linear;
 }
 
+.panel__btn_active {
+  background-color: #ffe4c4;
+}
+
 .panel__btn:hover {
   background-color: #ffe4c4;
 }
 
 .panel__btn:active {
   transform: scale(0.985);
+}
+
+@media screen and (max-width: 650px) {
+  .panel {
+    grid-template-columns: 70px max-content max-content;
+  }
+
+  .panel__btnWrapper {
+    gap: 0 5px;
+  }
+
+  .panel__btn {
+    padding: 5px;
+    font-size: 0.875rem;
+  }
+
+  .panel__counter {
+    font-size: 0.875rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .panel {
+  grid-template-areas: 
+  'counter counter'
+  'filters remove';
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 5px;
+  padding: 5px 15px;
+  }
 }

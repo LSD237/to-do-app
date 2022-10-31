@@ -4,6 +4,14 @@
   min-height: 100vh;
 }
 
+.header__hiddenTitle {
+  margin: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
 .content {
   display: grid;
   flex: 1;
@@ -11,6 +19,22 @@
 }
 
 .todoSection {
-  width: 100%;  
+  box-sizing: border-box;
+  padding: 120px 0 0 0;
+  width: 100%;
+  display: flex;
+  justify-items: center;
 }
 
+.todoWidget {
+  box-sizing: border-box;
+  padding: 0 50px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+@media screen and (max-width: 650px) {
+  .todoWidget {
+    padding: 0 20px;
+  }
+}
