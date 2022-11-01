@@ -8,18 +8,18 @@ const ToDoItem: FC<IToDoItemProps> = ({ itemData, removeHandler, changeHandler, 
     <label
       htmlFor={itemData.id}
       className={cx(styles.item__inputLabel, {
-        [styles.item__inputLabel_checked]: itemData.completed,
+        [styles.item__inputLabel_checked]: itemData?.completed,
       })}
     >
       <input
         className={styles.item__input}
-        checked={itemData.completed}
+        checked={itemData?.completed}
         type='checkbox'
-        onChange={() => changeHandler(itemData.id)}
+        onChange={() => changeHandler(itemData?.id)}
         name={itemData.label}
         id={itemData.id}
       />
-      <span className={styles.item__text}>{itemData.label}</span>
+      <span className={styles.item__text}>{itemData?.label}</span>
     </label>
     <button type='button' className={styles.item__button} onClick={() => removeHandler(itemData.id)}>
       X
