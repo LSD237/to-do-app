@@ -74,4 +74,8 @@
   .todoWidget {
     padding: 0 20px;
   }
+
+  .footer {
+    padding: 0 15px;
+  }
 }
