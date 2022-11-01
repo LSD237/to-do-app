@@ -1,0 +1,15 @@
+:root {
+  --primary-btn-hover: #f5d8b4;
+  --primary-border-color: #fff;
+  --primary-text-color: #fff;
+  --primary-placeholder-color: #d3d3d3;
+  --primary-input-bcg: #fff;
+  --primary-bcg-cover: rgba(15, 15, 15, 0.6);
+  --primary-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  --primary-btn-warning-light: #e7a2a2;
+  --primary-btn-warning-strong: #ff0000;
+
+  --secondary-border-color: #000;
+  --secondary-text-color: #000;
+  --secondary-font: Verdana, Geneva, Tahoma, sans-serif; 
+}

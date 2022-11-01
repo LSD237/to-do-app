@@ -1,7 +1,13 @@
 .app {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-image: url("../../images/main-bcg.jpg");
+  z-index: 1;
+}
+.header {
+  height: 0;
 }
 
 .header__hiddenTitle {
@@ -15,7 +21,17 @@
 .content {
   display: grid;
   flex: 1;
-  background-color: aliceblue;
+}
+
+.app::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-bcg-cover);
+  z-index: -1;
 }
 
 .todoSection {
@@ -31,6 +47,27 @@
   padding: 0 50px;
   margin: 0 auto;
   max-width: 800px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.footer__logo {
+  width: 45px;
+  height: 45px;
+}
+
+.footer__copyright {
+  color: var(--primary-placeholder-color);
+  font-family: var(--primary-font);
+  font-size: 1rem;
+  line-height: 1;
+  font-style: normal;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 650px) {

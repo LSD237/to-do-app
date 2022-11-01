@@ -46,7 +46,6 @@ const ToDoWidget: FC<IToDoWidgetProps> = ({ label, className, ...props }) => {
 
   const handleSetFilter = (filter: ToDoFilters) => {
     setFilter(filter);
-    console.log(filter);
   };
 
   const handleAddToDo = (value: string) => {
