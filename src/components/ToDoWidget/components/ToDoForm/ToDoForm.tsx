@@ -12,8 +12,10 @@ const ToDoForm: FC<IToDoFormProps> = ({ addToDo, className, ...props }) => {
 
   const formSubmitHandler = (e: FormEvent) => {
     e.preventDefault();
-    addToDo(inputValue);
-    setInputValue('');
+    if(inputValue.length) {
+      addToDo(inputValue);
+      setInputValue('');
+    }
   };
 
   return (
