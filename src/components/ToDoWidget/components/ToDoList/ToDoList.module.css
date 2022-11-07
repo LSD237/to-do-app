@@ -18,3 +18,8 @@
   box-sizing: border-box;
   padding: 20px 0;
 }
+
+.isGrabbing {
+  background: rgb(117, 117, 117);
+  opacity: 0.8;
+}

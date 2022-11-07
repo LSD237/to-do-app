@@ -1,5 +1,5 @@
 import { FC, useMemo, DragEvent, useState } from 'react';
-import cx from 'classnames';
+import cn from 'classnames';
 import styles from './ToDoList.module.css';
 import { IToDoListProps } from './ToDoList.props';
 import ToDoItem from '../ToDoItem/ToDoItem';
@@ -11,28 +11,18 @@ const ToDoList: FC<IToDoListProps> = ({ filter, todos, handlers, className, ...p
 
   const preparedArr = useMemo(() => prepareTodos(todos, filter), [todos, filter]);
 
-  const dragStartHandler = (e: DragEvent<HTMLLIElement>, item: TToDoItem) => {
-    setCurrentTodo(item);
-  };
-
-  const dragEndHandler = (e: DragEvent<HTMLLIElement>) => {
-    e.currentTarget.style.background = 'transparent';
-  };
-
   const dragOverHandler = (e: DragEvent<HTMLLIElement>) => {
     e.preventDefault();
-    e.currentTarget.style.background = 'grey';
+    e.currentTarget.classList.add(styles.isGrabbing);
   };
 
   const dropHandler = (e: DragEvent<HTMLLIElement>, item: TToDoItem) => {
     e.preventDefault();
     if (currentTodo) {
       const sortedTodos = sortTodosByOrder(preparedArr, currentTodo, item);
-      console.log(sortedTodos);
-      
-      handlers.reorderHandler(sortedTodos)
+      handlers.reorderHandler(sortedTodos);
     }
-    e.currentTarget.style.background = 'transparent';
+    e.currentTarget.classList.remove(styles.isGrabbing);
   };
 
   if (preparedArr.length === 0) {
@@ -40,13 +30,13 @@ const ToDoList: FC<IToDoListProps> = ({ filter, todos, handlers, className, ...p
   }
 
   return (
-    <ul className={cx(styles.list, className)} {...props}>
+    <ul className={cn(styles.list, className)} {...props}>
       {preparedArr.map((item, index) => (
         <ToDoItem
           draggable={true}
-          onDragStart={(e) => dragStartHandler(e, item)}
-          onDragLeave={(e) => dragEndHandler(e)}
-          onDragEnd={(e) => dragEndHandler(e)}
+          onDragStart={() => setCurrentTodo(item)}
+          onDragLeave={(e) => e.currentTarget.classList.remove(styles.isGrabbing)}
+          onDragEnd={(e) => e.currentTarget.classList.remove(styles.isGrabbing)}
           onDragOver={(e) => dragOverHandler(e)}
           onDrop={(e) => dropHandler(e, item)}
           key={index}
