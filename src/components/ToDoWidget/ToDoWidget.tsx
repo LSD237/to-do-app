@@ -35,6 +35,11 @@ const ToDoWidget: FC<IToDoWidgetProps> = ({ label, className, ...props }) => {
     }
   };
 
+  const handleReorderTodos = (sortedTodos: TToDoItem[]) => {
+    setTodos(sortedTodos);
+    localStorage.setItem('todos', JSON.stringify(sortedTodos));
+  }
+
   const handleClearCompleted = () => {
     const filteredItems = [...todos].filter((item) => item.completed !== true);
     setTodos(filteredItems);
@@ -50,12 +55,13 @@ const ToDoWidget: FC<IToDoWidgetProps> = ({ label, className, ...props }) => {
 
   const handleAddToDo = (value: string) => {
     const updatedToDos = [
+      ...todos,
       {
         label: value,
         completed: false,
         id: nanoid(),
+        orderIndex: todos.length + 1,
       },
-      ...todos,
     ];
     setTodos(updatedToDos);
 
@@ -68,7 +74,15 @@ const ToDoWidget: FC<IToDoWidgetProps> = ({ label, className, ...props }) => {
     <div className={cx(styles.container, className)} {...props}>
       <h2 className={styles.label}>{label}</h2>
       <ToDoForm addToDo={handleAddToDo} />
-      <ToDoList todos={todos} changeHandler={handleChangeItemState} removeHandler={handleRemoveItem} filter={filter} />
+      <ToDoList
+        todos={todos}
+        filter={filter}
+        handlers={{
+          changeHandler: handleChangeItemState,
+          removeHandler: handleRemoveItem,
+          reorderHandler: handleReorderTodos,
+        }}
+      />
       <ToDoControlPanel
         clearHandler={handleClearCompleted}
         filterHandler={handleSetFilter}
